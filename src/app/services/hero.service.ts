@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of, tap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Hero } from './Entidades/Hero';
+import { Hero } from '../Entidades/Hero';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,19 @@ export class HeroService {
       catchError(this.handleError<Hero[]>('getHeroes', []))
     );
 
+  }
+
+  addHero(hero: Hero): Observable<Hero> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
+
+    return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
+     
+      catchError(this.handleError<Hero>('addHero'))
+
+    );
   }
 
   excluirHeroi(hero: Hero | number): Observable<Hero> {

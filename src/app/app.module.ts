@@ -6,17 +6,24 @@ import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HeroiviewComponent } from './heroiview/heroiview.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from './Auth/auth.module';
+import { HeroCreateComponent } from './hero-create/hero-create.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,
-    HeroiviewComponent
+    HeroiviewComponent,
+    HeroCreateComponent,
+    LoginComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
