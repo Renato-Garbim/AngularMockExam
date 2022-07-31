@@ -1,0 +1,12 @@
+<ul class="heroes">
+    <li *ngFor="let hero of listaHeroi" >
+  
+        <!-- <a routerLink="/detail/{{hero.Id}}">
+          <span class="badge">{{hero.Id}}</span> {{hero.Name}}
+        </a>
+   -->
+        <button class="delete" title="Excluir Registro"
+        (click)="delete(hero)">x</button>
+  
+    </li>
+  </ul>
