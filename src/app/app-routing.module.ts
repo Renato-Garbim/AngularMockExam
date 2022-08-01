@@ -5,6 +5,7 @@ import { GeneralGuard } from './Auth/Guard/general-guard';
 import { HeroCreateComponent } from './hero-create/hero-create.component';
 import { HeroiviewComponent } from './heroiview/heroiview.component';
 import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
 
@@ -12,8 +13,12 @@ const routes: Routes = [
 
   {
     path: 'login',
-    component: LoginComponent,
-    canActivate: [AuthGuard]
+    component: LoginComponent    
+  },
+
+  {
+    path: 'registro',
+    component: RegistroComponent    
   },
 
   {

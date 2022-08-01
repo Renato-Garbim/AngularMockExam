@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,7 @@ import { AuthModule } from './Auth/auth.module';
 import { HeroCreateComponent } from './hero-create/hero-create.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MessagesComponent,
     HeroiviewComponent,
     HeroCreateComponent,
-    LoginComponent
+    LoginComponent,
+    RegistroComponent
     
   ],
   imports: [
@@ -31,4 +33,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule implements OnInit {
+
+  constructor(){
+
+  }
+
+  ngOnInit(): void {
+
+    
+
+  } 
+
+
+
+
+}

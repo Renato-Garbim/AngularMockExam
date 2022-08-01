@@ -39,6 +39,27 @@ export class AuthenticationService {
 
   }
 
+  register(user: {email: string, password: string, confirmPassword: string}): Observable<boolean> {
+
+    const usuarioLogado =  new Usuario(user.email);
+    const url = this.api + '/Registrar';
+    
+    return this.httpClient.post<any>(url, user).pipe(
+
+        tap(token => this.doLoginUser(usuarioLogado, token) ),
+
+        map( () => true),
+
+        catchError(error => {
+
+          alert(error.error);
+
+          return of(false);
+
+        }));
+
+  }
+
   isLoggedIn() {
     return !!this.getJwtToken();
   }

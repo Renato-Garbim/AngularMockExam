@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from './services/message.service';
+import { HubConnection, HubConnectionBuilder } from '@microsoft/signalR'
 
 @Component({
   selector: 'app-root',
@@ -9,14 +11,42 @@ export class AppComponent implements OnInit {
 
   title = 'CRUD Mock com SignalR';
 
-  constructor(){
+  private _hubConnection!: HubConnection;
+
+
+  constructor(private messageService: MessageService){
     
+    this.createConnection();
+    this.startConnection();
+    this.registeOnServerEvents();
   }
 
   ngOnInit(): void {
 
+    localStorage.clear();
     
+  
+  }
+
+  private createConnection(){
+
+    this._hubConnection = new HubConnectionBuilder()
+    .withUrl('https://localhost:5001/clientHub').build();
 
   }
+
+  private startConnection(){
+    this._hubConnection.start();
+  }
+
+private registeOnServerEvents() : void {
+
+  this._hubConnection.on('ReceiveMessage', (message: string) => {
+
+    this.messageService.add('SignalR API: ' + message);
+
+  });
+}
+
 
 }
