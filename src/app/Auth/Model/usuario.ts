@@ -4,6 +4,6 @@ export class Usuario {
         this.Email = email;
     }    
 
-    Email: string;
+    Email: string;    
 
 }

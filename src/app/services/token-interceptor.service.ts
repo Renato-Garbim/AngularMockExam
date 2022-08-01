@@ -13,10 +13,16 @@ export class TokenInterceptorService implements HttpInterceptor {
 
   constructor(public authService: AuthenticationService) { }
 
+
+  
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
   
-    if (this.authService.ValidarExisteToken()) {      
+    if (this.authService.ValidarExisteToken()) {  
+      
+      console.log('Existe o Token e a request foi interceptada');
+
       request = this.addToken(request, this.authService.getJwtToken());
+
     }
 
     return next.handle(request).pipe(
@@ -31,6 +37,9 @@ export class TokenInterceptorService implements HttpInterceptor {
   }
 
   private addToken(request: HttpRequest<any>, token: string) {
+
+    console.log('O token do parametro é' + token);
+
     return request.clone({
       setHeaders: {
 

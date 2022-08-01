@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './Auth/Guard/auth-guard';
 import { GeneralGuard } from './Auth/Guard/general-guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroCreateComponent } from './hero-create/hero-create.component';
 import { HeroiviewComponent } from './heroiview/heroiview.component';
 import { LoginComponent } from './login/login.component';
@@ -19,6 +19,13 @@ const routes: Routes = [
   {
     path: 'registro',
     component: RegistroComponent    
+  },
+
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [GeneralGuard],
+    canLoad: [GeneralGuard]
   },
 
   {

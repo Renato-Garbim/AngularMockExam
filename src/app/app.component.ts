@@ -41,7 +41,11 @@ export class AppComponent implements OnInit {
 
 private registeOnServerEvents() : void {
 
-  this._hubConnection.on('ReceiveMessage', (message: string) => {
+  //console.log('Chamou o SignalR');
+
+  this._hubConnection.on('Send', (message: string) => {
+
+    console.log('SignalR:' + message);
 
     this.messageService.add('SignalR API: ' + message);
 

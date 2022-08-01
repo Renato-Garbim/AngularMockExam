@@ -11,6 +11,7 @@ import { HeroCreateComponent } from './hero-create/hero-create.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro/registro.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RegistroComponent } from './registro/registro.component';
     HeroiviewComponent,
     HeroCreateComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    DashboardComponent
     
   ],
   imports: [

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of, tap } from 'rxjs';
+import { Registro } from './Model/registro';
 import { Token } from './Model/token';
 import { Usuario } from './Model/usuario';
 
@@ -23,7 +24,7 @@ export class AuthenticationService {
     const usuarioLogado =  new Usuario(user.email);
     const url = this.api + '/login';
     
-    return this.httpClient.post<any>(url, user).pipe(
+    return this.httpClient.post<Token>(url, user).pipe(
 
         tap(token => this.doLoginUser(usuarioLogado, token) ),
 
@@ -39,12 +40,12 @@ export class AuthenticationService {
 
   }
 
-  register(user: {email: string, password: string, confirmPassword: string}): Observable<boolean> {
+  register(registro: {email: string, password: string, confirmPassword: string}): Observable<boolean> {
 
-    const usuarioLogado =  new Usuario(user.email);
-    const url = this.api + '/Registrar';
+    const usuarioLogado =  new Usuario(registro.email);
+    const url = this.api + '/registrar';
     
-    return this.httpClient.post<any>(url, user).pipe(
+    return this.httpClient.post<any>(url, registro).pipe(
 
         tap(token => this.doLoginUser(usuarioLogado, token) ),
 
@@ -65,6 +66,8 @@ export class AuthenticationService {
   }
 
   private doLoginUser(usuario: Usuario, tokens: Token) {
+    
+    console.log('do loginUser token: ' + tokens);
 
     localStorage.setItem('usuario', JSON.stringify(usuario));
     this.storeTokens(tokens);
@@ -73,7 +76,9 @@ export class AuthenticationService {
 
   private storeTokens(tokens: Token) {
 
-    if (tokens.Jwt !== undefined) {
+    console.log('storeTokens: ' + tokens);
+
+    if (tokens !== undefined) {
 
       localStorage.setItem(this.JWT_TOKEN, tokens.Jwt);
 
@@ -114,9 +119,9 @@ export class AuthenticationService {
 
   getJwtToken()  {
 
-    var token = localStorage.getItem(this.JWT_TOKEN);
+    const token = localStorage.getItem(this.JWT_TOKEN);
 
-    if(token !== null) return token[0];
+    if(token !== null) return token;
 
     return "";
   }

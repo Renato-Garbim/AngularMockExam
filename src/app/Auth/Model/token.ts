@@ -1,13 +1,11 @@
 export class Token {
     
-    constructor(jwt:string, refreshToken:string){
+    constructor(jwt:string){
 
         this.Jwt = jwt;
-        this.RefreshToken = refreshToken;
 
     }
 
     Jwt: string;
-    RefreshToken: string;
 
 }
