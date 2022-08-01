@@ -26,7 +26,9 @@ export class AuthenticationService {
     
     return this.httpClient.post<Token>(url, user).pipe(
 
-        tap(token => this.doLoginUser(usuarioLogado, token) ),
+        tap((token) => this.doLoginUser(usuarioLogado, token) ),
+
+
 
         map( () => true),
 
@@ -80,7 +82,7 @@ export class AuthenticationService {
 
     if (tokens !== undefined) {
 
-      localStorage.setItem(this.JWT_TOKEN, tokens.Jwt);
+      localStorage.setItem(this.JWT_TOKEN, tokens.jwt);
 
     } else {
 
@@ -101,7 +103,7 @@ export class AuthenticationService {
 
     }).pipe(tap((tokens: Token) => {
 
-      this.storeJwtToken(tokens.Jwt);
+      this.storeJwtToken(tokens.jwt);
 
     }));
   }
