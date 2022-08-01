@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './Auth/auth.module';
 import { HeroCreateComponent } from './hero-create/hero-create.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AuthModule
   ],
   providers: [],

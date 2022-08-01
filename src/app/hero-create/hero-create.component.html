@@ -1,13 +1,13 @@
 <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
     <div class="form-group">
-        <input type="hidden" name="Id" [(ngModel)]="heroFormService.formData.id" />
+        <input type="hidden" name="Id" [(ngModel)]="heroFormService.formData.Id" />
     </div>
       <div class="form-group">
         <label>
           Nome do Herói:
         </label>
         <input placeholder="digite o nome do heroi aqui.." 
-        name="Name" #Name="ngModel" [(ngModel)]="heroFormService.formData.name" class="form-control" required>
+        name="Name" #Name="ngModel" [(ngModel)]="heroFormService.formData.Name" class="form-control" required>
         <div class="validation-error" *ngIf="Name.invalid && Name.touched">
           Este campo é obrigatório.
         </div>
@@ -16,13 +16,13 @@
         <label>
           Poder do Herói:
         </label>
-        <input placeholder="digite o Poder do Herói aqui.."  name="Power" #Power="ngModel" [(ngModel)]="heroFormService.formData.power" class="form-control">
+        <input placeholder="digite o Poder do Herói aqui.."  name="Power" #Power="ngModel" [(ngModel)]="heroFormService.formData.Power" class="form-control">
       </div>
       <div class="form-group">
         <label>
           Ajudante:
         </label>
-        <input placeholder="digite o nome do Ajudante aqui.."  name="Sidekick" #Sidekick="ngModel" [(ngModel)]="heroFormService.formData.sidekick" class="form-control">
+        <input placeholder="digite o nome do Ajudante aqui.."  name="Sidekick" #Sidekick="ngModel" [(ngModel)]="heroFormService.formData.Sidekick" class="form-control">
       </div>
   
   <div class="form-row">
@@ -31,13 +31,13 @@
       <label>
         Idade:
       </label>
-      <input placeholder="digite a Idade aqui.."  name="Idade" #Sidekick="ngModel" [(ngModel)]="heroFormService.formData.idade" class="form-control">
+      <input placeholder="digite a Idade aqui.."  name="Idade" #Sidekick="ngModel" [(ngModel)]="heroFormService.formData.Idade" class="form-control">
     </div>
     <div class="form-group col-md-6">
       <label>
         Tipo Sanguíneo:
       </label>
-      <input placeholder="digite o Tipo Sanguíneo aqui.."  name="TipoSanguineo" #Sidekick="ngModel" [(ngModel)]="heroFormService.formData.tipoSanguineo" class="form-control">
+      <input placeholder="digite o Tipo Sanguíneo aqui.."  name="TipoSanguineo" #Sidekick="ngModel" [(ngModel)]="heroFormService.formData.TipoSanguineo" class="form-control">
     </div>
   
   <div class="form-group">
