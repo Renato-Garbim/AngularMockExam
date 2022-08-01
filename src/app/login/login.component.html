@@ -1,38 +1,54 @@
-<div class="header center">Log In</div>
 
-<form [formGroup]="loginForm" (ngSubmit)="login()">
+<div class="row mb-3">
 
-  <div class="form-group">
+  <div class="col">
+    <span>
+      Área de Acesso - Login
+    </span>
+  </div>
 
-    <label>
-      Login:
-    </label>
+</div>
 
-    <input type="text" id="email" placeholder="Email" autocomplete="off" formControlName="email" required>
+<div class="row">
+
+  <div class="col">
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+  
+      <div class="form-group">
+    
+        <div class="mb-3"> 
+          <label class="form-label">Login:</label>          
+          <input class="form-control" type="text" id="email" placeholder="Email" autocomplete="off" formControlName="email" required>      
+        </div>
+            
+      </div>
+    
+      <div class="form-group">
+        <label class="form-label">Senha:</label>    
+        <input class="form-control" type="password" id="password" placeholder="Password" formControlName="password" required>    
+      </div>
+    
+      <div class="actions">
+        <button class="btn btn-primary btn-lg" type="submit">Acessar</button>
+      </div>
+    
+    </form>
 
   </div>
 
-  <div class="form-group">
-    <label>
-      Senha:
-    </label>
+</div>
 
-    <input type="password" id="password" placeholder="Password" formControlName="password" required>
 
+<div class="row">
+  <div class="col">
+    <nav>
+
+      <a href="/login">Acessar</a>
+      <a href="/registro">Novo Usuário</a>
+      
+      </nav>
   </div>
-
-  <div class="actions">
-    <button color="primary" type="submit">LOG IN</button>
-  </div>
-
-</form>
-
-<nav>
-
-<a href="/login">Acessar</a>
-<a href="/registro">Novo Usuário</a>
-
-</nav>
-
+</div>
 
 <router-outlet></router-outlet>

@@ -1,12 +1,24 @@
-<ul class="heroes">
-    <li *ngFor="let hero of listaHeroi" >
-  
-        <!-- <a routerLink="/detail/{{hero.Id}}">
-          <span class="badge">{{hero.Id}}</span> {{hero.Name}}
-        </a>
-   -->
-        <button class="delete" title="Excluir Registro"
-        (click)="delete(hero)">x</button>
-  
-    </li>
-  </ul>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th> 
+        Nome Heroi 
+      </th>
+      <th>
+        Excluir
+      </th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of listaHeroi">
+      <td>
+        <div class="fw-bold">{{hero.name}}</div>          
+      </td>
+      <td>
+        <button class="btn btn-sm btn-danger" title="Excluir Registro" (click)="delete(hero)">x</button>
+      </td>
+    </tr>  
+  </tbody>
+    
+</table>

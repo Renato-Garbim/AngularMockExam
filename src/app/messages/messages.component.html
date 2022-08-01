@@ -1,8 +1,17 @@
-<div *ngIf="messageService.messages.length">
 
-    <h2>Notificações do Server:</h2>
-    <button type="button" class="clear"
-            (click)="messageService.clear()">Apagar</button>
-    <div *ngFor='let message of messageService.messages'> {{message}} </div>
-  
-  </div>
+<div class="row">
+        <div class="col">
+
+                <h2>Notificações do Server:</h2>
+
+                <div *ngIf="messageService.messages.length">                        
+
+                        <button type="button" class="clear" (click)="messageService.clear()">Apagar</button>
+
+                        <ul class="list-group">
+                                <li class="list-group-item" *ngFor='let message of messageService.messages'> {{message}} </li>
+                        </ul>
+                      
+                </div>
+        </div>
+</div>
