@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 import { Hero } from '../Entidades/Hero';
 import { HeroService } from '../services/hero.service';
 
@@ -12,7 +14,7 @@ export class HeroiviewComponent implements OnInit {
 
   listaHeroi: Hero[] = [];
   
-  constructor(public heroService: HeroService) { }
+  constructor(public heroService: HeroService, private route: ActivatedRoute,  private router: Router ) { }
 
   ngOnInit(): void {
 
@@ -30,6 +32,13 @@ export class HeroiviewComponent implements OnInit {
 
     this.heroService.excluirHeroi(hero).subscribe();
   }
+
+  editar(hero: Hero): void{
+
+    this.router.navigate(['/hero', hero.id]);    
+
+  }
+  
 
 
 }

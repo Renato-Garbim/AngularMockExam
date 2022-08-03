@@ -39,6 +39,27 @@ export class HeroService {
     );
   }
 
+  getHero(id: number): Observable<Hero> {
+
+    const url = `${this.heroesUrl}/${id}`;
+
+    return this.http.get<Hero>(url).pipe(
+      
+      catchError(this.handleError<Hero>(`getHero id="${id}"`))
+
+    );
+  }
+
+  updateHero(hero: Hero): Observable<any> {
+
+    const url = `${this.heroesUrl}/${hero.id}`;
+
+    return this.http.put(url, hero, this.httpOptions).pipe(
+      
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
+
   excluirHeroi(hero: Hero | number): Observable<Hero> {
     
     const id = typeof hero === 'number' ? hero : hero.id;

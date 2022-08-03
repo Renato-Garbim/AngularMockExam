@@ -2,6 +2,7 @@ import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HeroiviewComponent } from './heroiview/heroiview.component';
@@ -12,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro/registro.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroEditComponent } from './hero-edit/hero-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeroCreateComponent,
     LoginComponent,
     RegistroComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroEditComponent
     
   ],
   imports: [
@@ -30,7 +33,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AuthModule
+    AuthModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

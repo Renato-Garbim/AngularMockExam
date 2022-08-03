@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GeneralGuard } from './Auth/Guard/general-guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroCreateComponent } from './hero-create/hero-create.component';
+import { HeroEditComponent } from './hero-edit/hero-edit.component';
 import { HeroiviewComponent } from './heroiview/heroiview.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
@@ -31,6 +32,13 @@ const routes: Routes = [
   {
     path: 'heroes',
     component: HeroiviewComponent,
+    canActivate: [GeneralGuard],
+    canLoad: [GeneralGuard]
+  },
+
+  {
+    path: 'hero/:id',
+    component: HeroEditComponent,
     canActivate: [GeneralGuard],
     canLoad: [GeneralGuard]
   },
