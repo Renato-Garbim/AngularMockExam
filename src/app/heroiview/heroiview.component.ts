@@ -12,7 +12,7 @@ import { HeroService } from '../services/hero.service';
 })
 export class HeroiviewComponent implements OnInit {
 
-  listaHeroi: Hero[] = [];
+  listaHeroi: Array<Hero> = [];
   
   constructor(public heroService: HeroService, private route: ActivatedRoute,  private router: Router ) { }
 

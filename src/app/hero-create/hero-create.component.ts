@@ -33,7 +33,6 @@ export class HeroCreateComponent implements OnInit {
 
     this.heroFormService.formData = {      
       id: 0,
-      HeroId: '',
       name: '',
       Power: '',
       Sidekick: '',

@@ -16,7 +16,7 @@ export class HeroService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  getAll(): Observable<Array<Hero>> {
+  getAll(): Observable<ReadonlyArray<Hero>> {
     return this.http
       .get<{ items: Hero[] }>(
         this.heroesUrl
@@ -26,8 +26,8 @@ export class HeroService {
 
   getHeroes(): Observable<Array<Hero>> {
 
-    return this.http.get<{ items: Hero[]}>(this.heroesUrl, this.httpOptions).pipe(     
-      map((heros) => heros.items || []),
+    return this.http.get<Hero[]>(this.heroesUrl, this.httpOptions).pipe(     
+      
       // caso falhe a comunicação com a api
       catchError(this.handleError<Hero[]>('getHeroes', []))
     );
