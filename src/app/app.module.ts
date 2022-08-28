@@ -14,6 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistroComponent } from './registro/registro.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroEditComponent } from './hero-edit/hero-edit.component';
+import { StoreModule } from '@ngrx/store';
+import { DashboardHeroViewComponent } from './dashboard-hero-view/dashboard-hero-view.component';
+import { booksReducer } from './state/books.reducer';
+import { collectionReducer } from './state/collection.reducer';
+import { BookCollectionComponent } from './book-collection/book-collection.component';
+import { BookListComponent } from './book-list/book-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,10 @@ import { HeroEditComponent } from './hero-edit/hero-edit.component';
     LoginComponent,
     RegistroComponent,
     DashboardComponent,
-    HeroEditComponent
+    HeroEditComponent,
+    DashboardHeroViewComponent,
+    BookCollectionComponent,
+    BookListComponent
     
   ],
   imports: [
@@ -34,11 +43,13 @@ import { HeroEditComponent } from './hero-edit/hero-edit.component';
     FormsModule,
     ReactiveFormsModule,
     AuthModule,
-    RouterModule
+    RouterModule,
+    StoreModule.forRoot({  books: booksReducer, collection: collectionReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 
 export class AppModule implements OnInit {
 

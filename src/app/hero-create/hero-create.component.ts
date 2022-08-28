@@ -31,8 +31,9 @@ export class HeroCreateComponent implements OnInit {
       form.resetForm();
     }
 
-    this.heroFormService.formData = {
+    this.heroFormService.formData = {      
       id: 0,
+      HeroId: '',
       name: '',
       Power: '',
       Sidekick: '',

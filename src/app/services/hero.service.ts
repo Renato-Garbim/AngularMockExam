@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { catchError, Observable, of, tap } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Hero } from '../Entidades/Hero';
 
@@ -16,10 +16,18 @@ export class HeroService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  getHeroes(): Observable<Hero[]> {
+  getAll(): Observable<Array<Hero>> {
+    return this.http
+      .get<{ items: Hero[] }>(
+        this.heroesUrl
+      )
+      .pipe(map((heroes) => heroes.items || []));
+  }
 
-    return this.http.get<Hero[]>(this.heroesUrl, this.httpOptions).pipe(     
-      
+  getHeroes(): Observable<Array<Hero>> {
+
+    return this.http.get<{ items: Hero[]}>(this.heroesUrl, this.httpOptions).pipe(     
+      map((heros) => heros.items || []),
       // caso falhe a comunicação com a api
       catchError(this.handleError<Hero[]>('getHeroes', []))
     );

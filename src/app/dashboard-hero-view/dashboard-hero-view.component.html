@@ -1,0 +1,9 @@
+<div 
+  class=""
+  *ngFor="let hero of Heroes"
+>
+  <p>{{hero.name}}</p><span> with the power of {{hero.Power}}</span>
+  <button
+    (click)="add.emit(hero.HeroId)"
+    data-test="add-button">Add to Collection</button>
+</div>
