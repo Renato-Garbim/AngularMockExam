@@ -16,10 +16,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroEditComponent } from './hero-edit/hero-edit.component';
 import { StoreModule } from '@ngrx/store';
 import { DashboardHeroViewComponent } from './dashboard-hero-view/dashboard-hero-view.component';
-import { booksReducer } from './state/books.reducer';
-import { collectionReducer } from './state/collection.reducer';
-import { BookCollectionComponent } from './book-collection/book-collection.component';
-import { BookListComponent } from './book-list/book-list.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +27,7 @@ import { BookListComponent } from './book-list/book-list.component';
     RegistroComponent,
     DashboardComponent,
     HeroEditComponent,
-    DashboardHeroViewComponent,
-    BookCollectionComponent,
-    BookListComponent
+    DashboardHeroViewComponent
     
   ],
   imports: [
@@ -43,8 +37,7 @@ import { BookListComponent } from './book-list/book-list.component';
     FormsModule,
     ReactiveFormsModule,
     AuthModule,
-    RouterModule,
-    StoreModule.forRoot({  books: booksReducer, collection: collectionReducer })
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

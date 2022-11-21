@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Hero } from '../Entidades/Hero';
-import { BookService } from '../services/book.service';
 import { HeroService } from '../services/hero.service';
 
 @Component({
@@ -13,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService, private booksService: BookService, private store: Store) { }
+  constructor(private heroService: HeroService, private store: Store) { }
 
   ngOnInit(): void {
     this.getHeroes();
