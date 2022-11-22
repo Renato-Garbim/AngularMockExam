@@ -16,6 +16,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroEditComponent } from './hero-edit/hero-edit.component';
 import { StoreModule } from '@ngrx/store';
 import { DashboardHeroViewComponent } from './dashboard-hero-view/dashboard-hero-view.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { DashboardHeroViewComponent } from './dashboard-hero-view/dashboard-hero
     ReactiveFormsModule,
     AuthModule,
     RouterModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     //StoreDevtoolsModule.instrument({maxAge: 5})
   ],
   providers: [],
