@@ -37,7 +37,8 @@ import { DashboardHeroViewComponent } from './dashboard-hero-view/dashboard-hero
     FormsModule,
     ReactiveFormsModule,
     AuthModule,
-    RouterModule
+    RouterModule,
+    //StoreDevtoolsModule.instrument({maxAge: 5})
   ],
   providers: [],
   bootstrap: [AppComponent]

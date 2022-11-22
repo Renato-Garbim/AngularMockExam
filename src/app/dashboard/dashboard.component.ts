@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Hero } from '../Entidades/Hero';
 import { HeroService } from '../services/hero.service';
+import { enter } from '../states/herostates/hero-page-actions';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,6 +17,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHeroes();
+    this.store.dispatch(enter());
     
   }
 
