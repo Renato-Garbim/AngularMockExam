@@ -11,12 +11,12 @@
       </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let hero of listaHeroi">
+    <tr *ngFor="let hero of listaHeroi | async">
       <td>
         <div class="fw-bold">{{hero.name}}</div>          
       </td>
       <td>
-        <button class="btn btn-sm btn-danger" title="Excluir Registro" (click)="delete(hero)">x</button>
+        <!-- <button class="btn btn-sm btn-danger" title="Excluir Registro" (click)="delete(hero)">x</button> -->
         <button class="btn btn-sm" title="editar registro"(click)="editar(hero)">edit</button>
       </td>
     </tr>  

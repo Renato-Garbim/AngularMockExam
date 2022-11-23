@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Hero } from '../Entidades/Hero';
 import { HeroService } from '../services/hero.service';
 import { enter } from '../states/herostates/hero-page-actions';
+import { selectAllHeroes } from '../states/herostates/hero.state';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,16 +16,16 @@ export class DashboardComponent implements OnInit {
 
   constructor(private heroService: HeroService, private store: Store) { }
 
-  ngOnInit(): void {
-    this.getHeroes();
+  ngOnInit(): void {    
     this.store.dispatch(enter());
-    
+    this.getHeroes();    
   }
 
 
   getHeroes(): void {
-    this.heroService.getHeroes()
-    .subscribe(x => this.heroes = x.slice(0, 4));
+    
+    let list = this.store.select(selectAllHeroes);
+    list.subscribe(x => this.heroes = x.slice(0, 4));    
   }
 
 

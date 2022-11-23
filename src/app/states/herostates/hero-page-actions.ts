@@ -3,6 +3,11 @@ import { Hero } from "src/app/Entidades/Hero";
 
 export const enter = createAction ('[Hero Page] Enter');
 
+// export const getAllHeroes = createAction (
+//     '[Heroes Page] get all heroes ', 
+//     props<{ heroes:  Hero[]}>()
+// )
+
 export const SelectHero = createAction (
     '[Heroes Page] Select a Hero',
     props<{ heroId: string}>()

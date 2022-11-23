@@ -1,5 +1,6 @@
-import { createReducer, on } from "@ngrx/store";
+import { createReducer, createSelector, on } from "@ngrx/store";
 import { Hero } from "src/app/Entidades/Hero";
+import { getAllHeroes } from "./hero-api.actions";
 import { enter, SelectHero } from "./hero-page-actions";
 
 export interface State {
@@ -27,5 +28,25 @@ export const reducer = createReducer(
             ...state,
             activeHeroId: action.heroId
         }
+    }),
+    on(getAllHeroes, (state, action) => {
+        return {
+            ...state,
+            collection: action.heroes,
+            activeHeroId: null
+        }
     })
+)
+
+
+export const selectAll = (state: State) => state.collection;
+export const selectActiveHeroId = (state: State) => state.activeHeroId;
+
+//Selector from ngrx , has a better perfomance 
+export const selectActiveHero = createSelector(
+    selectAll,
+    selectActiveHeroId,
+    (heroes, activeId) => {
+        return heroes.find(hero => hero.id.toString() == activeId || null)
+    }
 )

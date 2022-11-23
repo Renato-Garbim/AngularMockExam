@@ -16,7 +16,7 @@ export class HeroService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  getAll(): Observable<ReadonlyArray<Hero>> {
+  getAll(): Observable<Hero[]> {
     return this.http
       .get<{ items: Hero[] }>(
         this.heroesUrl
