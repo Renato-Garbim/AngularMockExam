@@ -39,14 +39,17 @@ export const reducer = createReducer(
 )
 
 
-export const selectAll = (state: State) => state.collection;
+export const selectAll = (state: State) => {
+  
+    return state?.collection ?? [];
+}
 export const selectActiveHeroId = (state: State) => state.activeHeroId;
 
 //Selector from ngrx , has a better perfomance 
-export const selectActiveHero = createSelector(
-    selectAll,
-    selectActiveHeroId,
-    (heroes, activeId) => {
-        return heroes.find(hero => hero.id.toString() == activeId || null)
-    }
-)
+// export const selectActiveHero = createSelector(
+//     selectAll,
+//     selectActiveHeroId,
+//     (heroes, activeId) => {
+//         return heroes.find(hero => hero.id.toString() == activeId || null)
+//     }
+// )

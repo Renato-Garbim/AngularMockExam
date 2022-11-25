@@ -25,7 +25,8 @@ export class DashboardComponent implements OnInit {
   getHeroes(): void {
     
     let list = this.store.select(selectAllHeroes);
-    list.subscribe(x => this.heroes = x.slice(0, 4));    
+    list.subscribe(x => this.heroes = x.slice(0, 4));
+        
   }
 
 

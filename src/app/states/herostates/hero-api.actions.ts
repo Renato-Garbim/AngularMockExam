@@ -10,3 +10,13 @@ export const DeleteHeroAPI = createAction (
     '[Hero API] Delete Hero',
      props<{heroId: string}>()
 )
+
+export const CreateHeroAPI = createAction (
+    '[Hero API] Create Hero',
+     props<{hero: Hero}>()
+)
+
+export const UpdateHeroAPI = createAction (
+    '[Hero API] Update Hero',
+     props<{hero: Hero}>()
+)

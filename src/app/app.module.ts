@@ -20,6 +20,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { HeroApiEffects } from './states/herostates/hero-api.effects';
+import { SharedStateHeroesModule } from './states/herostates/hero.state';
 
 @NgModule({
   declarations: [
@@ -42,10 +43,11 @@ import { HeroApiEffects } from './states/herostates/hero-api.effects';
     ReactiveFormsModule,
     AuthModule,
     RouterModule,
+    SharedStateHeroesModule,    
+    StoreModule.forRoot({  }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
     EffectsModule.forFeature([HeroApiEffects])    
-    //StoreDevtoolsModule.instrument({maxAge: 5})
   ],
   providers: [],
   bootstrap: [AppComponent]

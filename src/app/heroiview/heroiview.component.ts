@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Hero } from '../Entidades/Hero';
-import { HeroService } from '../services/hero.service';
 import { enter } from '../states/herostates/hero-page-actions';
 import { selectAllHeroes } from '../states/herostates/hero.state';
 
@@ -14,7 +13,7 @@ import { selectAllHeroes } from '../states/herostates/hero.state';
 })
 export class HeroiviewComponent implements OnInit {
 
-  constructor(public heroService: HeroService, private route: ActivatedRoute,  private router: Router, private store: Store ) { }
+  constructor(private route: ActivatedRoute,  private router: Router, private store: Store ) { }
 
   listaHeroi = this.store.select(selectAllHeroes);
   

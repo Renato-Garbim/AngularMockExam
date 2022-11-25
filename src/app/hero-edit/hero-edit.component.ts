@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 import { Hero } from '../Entidades/Hero';
-import { HeroService } from '../services/hero.service';
+import { UpdateHero } from '../states/herostates/hero-page-actions';
+import { selectAllHeroes } from '../states/herostates/hero.state';
 
 @Component({
   selector: 'app-hero-edit',
@@ -15,7 +16,7 @@ export class HeroEditComponent implements OnInit {
   hero: Hero | undefined;
   hero$!: Observable<Hero>;
 
-  constructor(    private route: ActivatedRoute, private heroService: HeroService) { 
+  constructor( private route: ActivatedRoute, private store: Store) { 
     
   }
 
@@ -30,25 +31,19 @@ export class HeroEditComponent implements OnInit {
   save(): void {
 
     if(this.hero){
-      this.heroService.updateHero(this.hero)
-      .subscribe(() => this.goBack());
+      
+      this.store.dispatch(UpdateHero( {heroId: this.hero.id.toString(), changes: this.hero} ));
+      
     }    
   }
 
   getHero(): void {
 
-    let id = parseInt(this.route.snapshot.paramMap.get('id')!, 10);   
+    let id = parseInt(this.route.snapshot.paramMap.get('id')!, 10); 
 
-    // this.hero$ = this.route.paramMap.pipe(
-
-    //   switchMap((params: ParamMap) => //switchMap garante que sempre a ultima request sera realizada, descartando as anteriores
-    //     this.heroService.getHero(id)));
-
-    this.heroService.getHero(id)
-      .subscribe(hero => this.hero = hero);
-
-      console.log(this.hero);
-
+    let list = this.store.select(selectAllHeroes);
+    list.subscribe(x => this.hero = x.find((hero) => { return hero.id === id}));
+    
   }
 
 }

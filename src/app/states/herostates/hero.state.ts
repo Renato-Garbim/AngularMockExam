@@ -25,7 +25,7 @@ export const selectSharedHeroesState = createFeatureSelector<State>(FEATURE_KEY)
 
 export const selectHeroesState  = createSelector(
     selectSharedHeroesState,
-    (sharedHeroesFeatureState) => sharedHeroesFeatureState.heroes 
+    (sharedHeroesFeatureState) => sharedHeroesFeatureState?.heroes 
 );
 
 export const selectAllHeroes = createSelector(

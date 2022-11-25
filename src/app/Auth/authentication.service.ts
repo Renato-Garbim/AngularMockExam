@@ -28,8 +28,6 @@ export class AuthenticationService {
 
         tap((token) => this.doLoginUser(usuarioLogado, token) ),
 
-
-
         map( () => true),
 
         catchError(error => {
