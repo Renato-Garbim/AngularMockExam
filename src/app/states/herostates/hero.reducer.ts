@@ -31,7 +31,7 @@ export const reducer = createReducer(
     }),
     on(getAllHeroes, (state, action) => {
         return {
-            ...state,
+            //...state,            
             collection: action.heroes,
             activeHeroId: null
         }

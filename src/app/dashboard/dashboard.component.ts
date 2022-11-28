@@ -17,13 +17,13 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {    
     this.heroFacade.startHeroCollection();
     this.getFirstFourHeroes();    
+
   }
 
   getFirstFourHeroes(): void {    
-    let list = this.heroFacade.getAllRegisters();
+    let list = this.heroFacade.getAllRegisters();      
     list.subscribe(x => this.heroes = x.slice(0, 4));        
   }
-
 
 
 }

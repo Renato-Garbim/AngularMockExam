@@ -17,7 +17,7 @@ constructor(private heroService: HeroService, private actions$: Actions){}
             ofType(enter),
             exhaustMap(() => {
                 return this.heroService
-                .getAll()
+                .getHeroes()
                 .pipe(map((heroes) => getAllHeroes({heroes: heroes}) ))
             })
         )

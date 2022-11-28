@@ -16,19 +16,11 @@ export class HeroService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  getAll(): Observable<Hero[]> {
-    return this.http
-      .get<{ items: Hero[] }>(
-        this.heroesUrl
-      )
-      .pipe(map((heroes) => heroes.items || []));
-  }
 
   getHeroes(): Observable<Array<Hero>> {
 
     return this.http.get<Hero[]>(this.heroesUrl, this.httpOptions).pipe(     
-      
-      // caso falhe a comunicação com a api
+      map(heroes => heroes),
       catchError(this.handleError<Hero[]>('getHeroes', []))
     );
 
@@ -36,11 +28,7 @@ export class HeroService {
 
   addHero(hero: Hero): Observable<Hero> {
 
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
-
-    return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
+    return this.http.post<Hero>(this.heroesUrl, hero,  this.httpOptions).pipe(
      
       catchError(this.handleError<Hero>('addHero'))
 
