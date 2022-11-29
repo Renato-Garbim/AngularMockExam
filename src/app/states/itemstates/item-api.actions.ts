@@ -1,6 +1,6 @@
 import { createAction, props } from "@ngrx/store";
 
-export const getAllRegisters = createAction(
+export const getAllItemRegisters = createAction(
     '[Item API] Get all Items',
     props<{ registers: Item[] }>()
 );

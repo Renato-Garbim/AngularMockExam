@@ -1,6 +1,6 @@
 import { createAction, props } from "@ngrx/store";
 
-export const enter = createAction ('[Admin Item Page] Enter');
+export const enterItemPage = createAction ('[Admin Item Page] Enter');
 
 export const createNewItem = createAction(
     '[Admin Item Page] Create New item',
