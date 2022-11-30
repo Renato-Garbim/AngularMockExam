@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Hero } from '../Entidades/Hero';
-import { HeroFacade } from '../states/herostates/hero.facade';
+import { Hero } from 'src/app/Entidades/Hero';
+import { HeroFacade } from 'src/app/states/herostates/hero.facade';
+
 
 
 @Component({
