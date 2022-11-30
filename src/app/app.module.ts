@@ -1,21 +1,19 @@
 import { NgModule, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { MessagesComponent } from './messages/messages.component';
-import { HeroiviewComponent } from './heroiview/heroiview.component';
+import { MessagesComponent } from './Views/messages/messages.component';
+import { HeroiviewComponent } from './Views/heroiview/heroiview.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './Auth/auth.module';
-import { HeroCreateComponent } from './hero-create/hero-create.component';
-import { LoginComponent } from './login/login.component';
+import { HeroCreateComponent } from './Views/hero-create/hero-create.component';
+import { LoginComponent } from './Views/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RegistroComponent } from './registro/registro.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroEditComponent } from './hero-edit/hero-edit.component';
+import { RegistroComponent } from './Views/registro/registro.component';
+import { DashboardComponent } from './Views/dashboard/dashboard.component';
+import { HeroEditComponent } from './Views/hero-edit/hero-edit.component';
 import { StoreModule } from '@ngrx/store';
-import { DashboardHeroViewComponent } from './dashboard-hero-view/dashboard-hero-view.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
@@ -32,7 +30,7 @@ import { SharedStateHeroesModule } from './states/herostates/hero.state';
     RegistroComponent,
     DashboardComponent,
     HeroEditComponent,
-    DashboardHeroViewComponent
+    DashboardComponent
     
   ],
   imports: [

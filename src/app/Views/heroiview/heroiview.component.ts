@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+<<<<<<< Updated upstream:src/app/heroiview/heroiview.component.ts
 import { Store } from '@ngrx/store';
 import { Hero } from '../Entidades/Hero';
 import { enter } from '../states/herostates/hero-page-actions';
 import { selectAllHeroes } from '../states/herostates/hero.state';
+=======
+import { Hero } from '../../Entidades/Hero';
+import { HeroFacade } from '../../states/herostates/hero.facade';
+>>>>>>> Stashed changes:src/app/Views/heroiview/heroiview.component.ts
 
 
 @Component({

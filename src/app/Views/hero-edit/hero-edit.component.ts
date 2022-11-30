@@ -2,9 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Hero } from '../Entidades/Hero';
-import { UpdateHero } from '../states/herostates/hero-page-actions';
-import { selectAllHeroes } from '../states/herostates/hero.state';
+import { Hero } from '../../Entidades/Hero';
+import { UpdateHero } from '../../states/herostates/hero-page-actions';
+import { selectAllHeroes } from '../../states/herostates/hero.state';
 
 @Component({
   selector: 'app-hero-edit',

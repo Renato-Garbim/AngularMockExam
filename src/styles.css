@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* Application-wide Styles */
+<<<<<<< Updated upstream
 h1 {
     color: #369;
     font-family: Arial, Helvetica, sans-serif;
@@ -43,3 +44,8 @@ h1 {
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+>>>>>>> Stashed changes
