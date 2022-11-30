@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { HeroFormService } from '../services/hero-form-service.service';
-import { HeroService } from '../services/hero.service';
+import { HeroFormService } from '../../services/hero-form-service.service';
+import { HeroService } from '../../services/hero.service';
 
 @Component({
   selector: 'app-hero-create',

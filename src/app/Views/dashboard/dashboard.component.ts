@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../Entidades/Hero';
-import { HeroFacade } from '../states/herostates/hero.facade';
+import { Hero } from '../../Entidades/Hero';
+import { HeroFacade } from '../../states/herostates/hero.facade';
 
 
 @Component({

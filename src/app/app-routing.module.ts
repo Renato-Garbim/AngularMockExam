@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GeneralGuard } from './Auth/Guard/general-guard';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HeroCreateComponent } from './hero-create/hero-create.component';
-import { HeroEditComponent } from './hero-edit/hero-edit.component';
-import { HeroiviewComponent } from './heroiview/heroiview.component';
-import { LoginComponent } from './login/login.component';
-import { RegistroComponent } from './registro/registro.component';
+import { DashboardComponent } from './Views/dashboard/dashboard.component';
+import { HeroCreateComponent } from './Views/hero-create/hero-create.component';
+import { HeroEditComponent } from './Views/hero-edit/hero-edit.component';
+import { HeroiviewComponent } from './Views/heroiview/heroiview.component';
+import { LoginComponent } from './Views/login/login.component';
+import { RegistroComponent } from './Views/registro/registro.component';
 
 const routes: Routes = [
 
