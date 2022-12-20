@@ -1,25 +1,39 @@
-<h1>{{title}}</h1>
+<div class="flex">
 
-<div >
-  <nav >
+    <div class="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-primary
+    text-white-shadow">  
 
-    <div >
-  
-      <ul >
-        <li >
-          <a routerLink="/dashboard">Dashboard</a>
-        </li>
-        <li >
-          <a  routerLink="/heroes">Heroes</a>
-        </li>
-        <li >
-          <a  routerLink="/create">Create</a>
-        </li> 
-      </ul>
-          
-    </div>
-  
-  </nav>
+      <div class="sidebar-icon group">
+
+        <i class="fa-solid fa-square-poll-vertical" routerLink="/dashboard"></i>
+        <span class="sidebar-tooltip group-hover:scale-100">
+          Dashboard
+        </span>
+
+      </div>
+
+
+      <div class="sidebar-icon group">
+
+        <i class="fa-solid fa-user" routerLink="/heroes"></i>
+        <span class="sidebar-tooltip group-hover:scale-100">
+          Heroes
+        </span>
+        
+      </div>
+
+
+      <div class="sidebar-icon group">
+
+        <i class="fa-solid fa-plus" routerLink="/create"></i>
+        <span class="sidebar-tooltip group-hover:scale-100">
+          Create New Hero
+        </span>
+        
+      </div>
+                  
+    </div>  
+
 </div>
 
 

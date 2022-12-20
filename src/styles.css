@@ -3,3 +3,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer components {
+
+    body {
+        @apply bg-gray-300 dark:bg-gray-700;
+    }
+
+    .global-container {        
+        @apply flex flex-col         
+        m-0 
+        pl-16
+        h-full w-full 
+        overflow-hidden        
+      }
+
+}
